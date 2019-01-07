@@ -16,17 +16,5 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if(textBox1.Text == "admin" && textBox2.Text == "admin123")
-            {
-                MessageBox.Show("You're signed in!");
-            }
-            else
-            {
-                MessageBox.Show("Error!");
-            }
-        }
     }
 }
