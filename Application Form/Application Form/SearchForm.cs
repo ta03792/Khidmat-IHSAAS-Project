@@ -20,10 +20,12 @@ namespace Application_Form
         private void Search_Click(object sender, EventArgs e)
         {
             {
-                
+                Results.DataSource = null;
+                Results.Rows.Clear();
+
                 string i = "";
-                string q = "SELECT ApplicationNumber, FirstName, LastName, CNIC, CellNo FROM dbo.Application DA INNER JOIN dbo.Stream_has_Application DS ON DA.ApplicationNumber = DS.Application_ApplicationNumber WHERE";
-                
+                string q = "SELECT DISTINCT ApplicationNumber, FirstName, LastName, CNIC, CellNo FROM dbo.Application DA WHERE ";
+
                 if (Monthly.Checked == true)
                 {
                     i = "Monthly";
@@ -63,31 +65,31 @@ namespace Application_Form
                     q += " DA.CellNo = '" + CellNumber.Text + "' AND ";
                 }
 
-
+                string education = "DA.ApplicationNumber in (SELECT Application_ApplicationNumber FROM Stream_has_Application DS WHERE DS.Stream_idStream = " + 1 +") OR ";
+                string ration = "DA.ApplicationNumber in (SELECT Application_ApplicationNumber FROM Stream_has_Application DS WHERE DS.Stream_idStream = " + 2 + ") OR ";
+                string medical = "DA.ApplicationNumber in (SELECT Application_ApplicationNumber FROM Stream_has_Application DS WHERE DS.Stream_idStream = " + 3 + ") OR ";
 
                 if (Education.Checked == true)
                 {
-                    q += " DS.Stream_idStream = " + 1 + " OR  ";
+                    q += education;
                     //MessageBox.Show(q);
                 }
                 if (Ration.Checked == true)
                 {
-                    q += " DS.Stream_idStream = " + 2 + " OR  ";
+                    q += ration;
                     //MessageBox.Show(q);
                 }
                 if (Medical.Checked == true)
                 {
-                    q += " DS.Stream_idStream = " + 3 + " OR  ";
+                    q += medical;
                     //MessageBox.Show(q);
                 }
 
-
                 string finalstring = "";
-                for(int j = 0;j < q.Length - 5;j++)
+                for(int j = 0;j < q.Length - 4;j++)
                 {
                     finalstring += q[j];
                 }
-                
 
                 DbConnection d = new DbConnection();
                 DataTable dt = d.Select(finalstring);

@@ -165,7 +165,7 @@ namespace Application_Form
             string boysages = NoOfBoys.Text + ":" + BoyAges.Text;
             string girlsages = NoOfGirls.Text + ":" + GirlAges.Text;
             
-            d.Inserts("EXEC New_Applicant '" + ApplicationNumber.Text + "','" + CNIC.Text + "','" + FirstName.Text + "','" + LastName.Text + "','" + FatherName.Text + "','" + CellNumber.Text + "','" + DateInitiated.Value.ToLongDateString() + "','" + Address.Text + "','" + i + "','" + Religion.Text + "','" + Sect.Text + "'");
+            d.Inserts("EXEC New_Applicant '" + ApplicationNumber.Text + "','" + CNIC.Text + "','" + FirstName.Text + "','" + LastName.Text + "','" + FatherName.Text + "','" + CellNumber.Text + "','" + DateInitiated.Value + "','" + Address.Text + "','" + i + "','" + Religion.Text + "','" + Sect.Text + "'");
             d.Inserts("EXEC New_Applicant_Primary '" + ApplicationNumber.Text + "','" + TotalIncome.Text + "','" + MonthlyRation.Text + "','" + EducationalExpenses.Text + "','" + MedicalExpenses.Text + "','" + ConveyanceExpenses.Text + "','" + OtherExpenses.Text + "','" + TotalExpense.Text + "'");
             d.Inserts("INSERT INTO dbo.ApplicantDues VALUES ('" + ApplicationNumber.Text + "','" + UtilityBills.Text + "','" + DueRent.Text + "','" + LoansDue.Text + "','" + BCInstallmentDue.Text + "','" + SecurityDeposit.Text + "')");
             d.Inserts("INSERT INTO dbo.ApplicantAssets VALUES ('" + ApplicationNumber.Text + "','" + CurrentMoney.Text + "','" + Gold.Text + "','" + Silver.Text + "','" + CPNotinUse.Text + "','" + VNotinUse.Text + "','" + Debt.Text + "','" + BCInstallmentDue.Text + "','" + Wares.Text + "','" + PNotinUse.Text + "','" + Other.Text + "','" + LuxuryItems.Text + "','" + Animal.Text + "','" + LoansGiven.Text + "')");
