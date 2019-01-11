@@ -79,6 +79,8 @@
             this.Results.Location = new System.Drawing.Point(12, 398);
             this.Results.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Results.Name = "Results";
+            this.Results.ReadOnly = true;
+            this.Results.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Results.Size = new System.Drawing.Size(1016, 429);
             this.Results.TabIndex = 0;
             // 
