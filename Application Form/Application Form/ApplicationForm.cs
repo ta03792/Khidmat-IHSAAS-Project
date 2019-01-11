@@ -315,55 +315,63 @@ namespace Application_Form
 
         private void button4_Click(object sender, EventArgs e)
         {
+          
             DbConnection d = new DbConnection();
-            string i = "";
-            string j = "";
-            if(Monthly.Checked == true)
+            try
             {
-                i = "Monthly";
-            }
-            if(Onetime.Checked == true)
-            {
-                i = "One Time";
-            }
-            if (Education.Checked == true)
-            {
-                j+= "1";
-            }
-            if (Ration.Checked == true)
-            {
-                j+= "2";
-            }
-            if (Medical.Checked == true)
-            {
-                j+= "3";
-            }
-           
-            string boysages = NoOfBoys.Text + ":" + BoyAges.Text;
-            string girlsages = NoOfGirls.Text + ":" + GirlAges.Text;
-            
-            d.Inserts("EXEC New_Applicant '" + ApplicationNumber.Text + "','" + CNIC.Text + "','" + FirstName.Text + "','" + LastName.Text + "','" + FatherName.Text + "','" + CellNumber.Text + "','" + DateInitiated.Value + "','" + Address.Text + "','" + i + "','" + Religion.Text + "','" + Sect.Text + "'");
-            d.Inserts("EXEC New_Applicant_Primary '" + ApplicationNumber.Text + "','" + TotalIncome.Text + "','" + MonthlyRation.Text + "','" + EducationalExpenses.Text + "','" + MedicalExpenses.Text + "','" + ConveyanceExpenses.Text + "','" + OtherExpenses.Text + "','" + TotalExpense.Text + "'");
-            d.Inserts("INSERT INTO dbo.ApplicantDues VALUES ('" + ApplicationNumber.Text + "','" + UtilityBills.Text + "','" + DueRent.Text + "','" + LoansDue.Text + "','" + BCInstallmentDue.Text + "','" + SecurityDeposit.Text + "')");
-            d.Inserts("INSERT INTO dbo.ApplicantAssets VALUES ('" + ApplicationNumber.Text + "','" + CurrentMoney.Text + "','" + Gold.Text + "','" + Silver.Text + "','" + CPNotinUse.Text + "','" + VNotinUse.Text + "','" + Debt.Text + "','" + BCInstallmentDue.Text + "','" + Wares.Text + "','" + PNotinUse.Text + "','" + Other.Text + "','" + LuxuryItems.Text + "','" + Animal.Text + "','" + LoansGiven.Text + "')");
-            d.Inserts("INSERT INTO dbo.ApplicantFamilyInfo VALUES ('" + ApplicationNumber.Text + "','" + NoOfFamilyMembers.Text + "','" + boysages + "','" + girlsages + "','" + SchoolGoing.Text + "','" + BUnderGuardianShip.Text + "','" + GUnderGuardianship.Text + "','" + EFamilyMembers.Text + "','" + SourceofIncome.Text + "','" + AidReceived.Text + "')");
-            d.Inserts("INSERT INTO dbo.DeductableDues VALUES ('" + ApplicationNumber.Text + "','" + TCountableAssets.Text + "','" + TDeductableDues.Text + "','" + NCountableAssets.Text + "','" + CAmountZakat.Text + "'");
+                string i = "";
+                string j = "";
+                if (Monthly.Checked == true)
+                {
+                    i = "Monthly";
+                }
+                if (Onetime.Checked == true)
+                {
+                    i = "One Time";
+                }
+                if (Education.Checked == true)
+                {
+                    j += "1";
+                }
+                if (Ration.Checked == true)
+                {
+                    j += "2";
+                }
+                if (Medical.Checked == true)
+                {
+                    j += "3";
+                }
+
+                string boysages = NoOfBoys.Text.ToString() + ": " + BoyAges.Text.ToString();
+                string girlsages = NoOfGirls.Text.ToString() + ": " + GirlAges.Text.ToString();
+
+                d.Inserts("EXEC New_Applicant '" + ApplicationNumber.Text + "','" + CNIC.Text + "','" + FirstName.Text + "','" + LastName.Text + "','" + FatherName.Text + "','" + CellNumber.Text + "','" + DateInitiated.Value + "','" + Address.Text + "','" + i + "','" + Religion.Text + "','" + Sect.Text + "'");
+                d.Inserts("EXEC New_Applicant_Primary '" + ApplicationNumber.Text + "','" + TotalIncome.Text + "','" + MonthlyRation.Text + "','" + EducationalExpenses.Text + "','" + MedicalExpenses.Text + "','" + ConveyanceExpenses.Text + "','" + OtherExpenses.Text + "','" + TotalExpense.Text + "'");
+                d.Inserts("INSERT INTO dbo.ApplicantDues VALUES ('" + ApplicationNumber.Text + "','" + UtilityBills.Text + "','" + DueRent.Text + "','" + LoansDue.Text + "','" + BCInstallmentDue.Text + "','" + SecurityDeposit.Text + "')");
+                d.Inserts("INSERT INTO dbo.ApplicantAssets VALUES ('" + ApplicationNumber.Text + "','" + CurrentMoney.Text + "','" + Gold.Text + "','" + Silver.Text + "','" + CPNotinUse.Text + "','" + VNotinUse.Text + "','" + Debt.Text + "','" + BCInstallmentDue.Text + "','" + Wares.Text + "','" + PNotinUse.Text + "','" + Other.Text + "','" + LuxuryItems.Text + "','" + Animal.Text + "','" + LoansGiven.Text + "')");
+                d.Inserts("INSERT INTO dbo.ApplicantFamilyInfo VALUES ('" + ApplicationNumber.Text + "','" + NoOfFamilyMembers.Text + "','" + boysages + "','" + girlsages + "','" + SchoolGoing.Text + "','" + BUnderGuardianShip.Text + "','" + GUnderGuardianship.Text + "','" + EFamilyMembers.Text + "','" + SourceofIncome.Text + "','" + AidReceived.Text + "')");
+                d.Inserts("INSERT INTO dbo.DeductableDues VALUES ('" + ApplicationNumber.Text + "','" + TCountableAssets.Text + "','" + TDeductableDues.Text + "','" + NCountableAssets.Text + "','" + CAmountZakat.Text + "')");
 
 
-            if (Education.Checked == true)
-            {
-                d.Inserts("INSERT INTO dbo.Stream_has_Application VALUES ('"  + 1 + "','" + ApplicationNumber.Text + "')");
-                //MessageBox.Show("INSERT INTO dbo.Stream_has_Application VALUES ('" + 1 + "','" + ApplicationNumber.Text + "')");
+                if (Education.Checked == true)
+                {
+                    d.Inserts("INSERT INTO dbo.Stream_has_Application VALUES ('" + 1 + "','" + ApplicationNumber.Text + "')");
+                    //MessageBox.Show("INSERT INTO dbo.Stream_has_Application VALUES ('" + 1 + "','" + ApplicationNumber.Text + "')");
+                }
+                if (Ration.Checked == true)
+                {
+                    d.Inserts("INSERT INTO dbo.Stream_has_Application  VALUES ('" + 2 + "','" + ApplicationNumber.Text + "')");
+                    // MessageBox.Show("INSERT INTO dbo.Stream_has_Application VALUES ('" + 1 + "','" + ApplicationNumber.Text + "')");
+                }
+                if (Medical.Checked == true)
+                {
+                    d.Inserts("INSERT INTO dbo.Stream_has_Application  VALUES ('" + 3 + "','" + ApplicationNumber.Text + "')");
+                    // MessageBox.Show("INSERT INTO dbo.Stream_has_Application VALUES ('" + 1 + "','" + ApplicationNumber.Text + "')");
+                }
             }
-            if (Ration.Checked == true)
+            catch(Exception ex)
             {
-                d.Inserts("INSERT INTO dbo.Stream_has_Application  VALUES ('" + 2 + "','" + ApplicationNumber.Text + "')");
-               // MessageBox.Show("INSERT INTO dbo.Stream_has_Application VALUES ('" + 1 + "','" + ApplicationNumber.Text + "')");
-            }
-            if (Medical.Checked == true)
-            {
-                d.Inserts("INSERT INTO dbo.Stream_has_Application  VALUES ('" + 3 + "','" + ApplicationNumber.Text + "')");
-               // MessageBox.Show("INSERT INTO dbo.Stream_has_Application VALUES ('" + 1 + "','" + ApplicationNumber.Text + "')");
+
             }
 
             SearchForm search = new SearchForm();
