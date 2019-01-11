@@ -11,7 +11,7 @@ namespace Application_Form
 {
     class DbConnection
     {
-        public SqlConnection conn = new SqlConnection(@"Server=TAHA-MURTAZA\SQLEXPRESS  ;Initial Catalog=IHSAAS Trust Fund;Integrated Security=true");
+        public SqlConnection conn = new SqlConnection(@"Server=DESKTOP-F47UO2G;Initial Catalog=IHSAAS Trust Fund;Integrated Security=true");
         public SqlCommand cmd = new SqlCommand();
 
         public DbConnection()

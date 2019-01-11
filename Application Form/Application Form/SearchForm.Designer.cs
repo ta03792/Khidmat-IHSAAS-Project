@@ -276,8 +276,10 @@
             this.Results.Location = new System.Drawing.Point(9, 16);
             this.Results.MultiSelect = false;
             this.Results.Name = "Results";
+            this.Results.ReadOnly = true;
             this.Results.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.Results.Size = new System.Drawing.Size(597, 266);
+            this.Results.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Results.Size = new System.Drawing.Size(896, 409);
             this.Results.TabIndex = 0;
             this.Results.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Results_CellContentClick);
             // 

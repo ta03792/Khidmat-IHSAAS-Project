@@ -18,14 +18,16 @@ namespace Application_Form
         }
 
         private void Search_Click(object sender, EventArgs e)
-        {
-            {
+        {   
+            
+            
                 Results.DataSource = null;
                 Results.Rows.Clear();
 
                 string i = "";
                 string q = "SELECT DISTINCT ApplicationNumber, FirstName, LastName, CNIC, CellNo FROM dbo.Application DA WHERE ";
-
+            try
+            { 
                 if (Monthly.Checked == true)
                 {
                     i = "Monthly";
@@ -99,6 +101,11 @@ namespace Application_Form
                     string s = dt.Rows[k][0].ToString() + dt.Rows[k][1].ToString();
                     Results.DataSource = dt;
                 }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("An error occurred: '{0}'", ex);
+                MessageBox.Show("Put in some criteria for searching.");
             }
         }
 
