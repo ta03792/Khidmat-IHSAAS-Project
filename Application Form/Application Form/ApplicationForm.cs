@@ -371,7 +371,8 @@ namespace Application_Form
             }
             catch(Exception ex)
             {
-
+                Console.WriteLine("An error occurred: '{0}'", ex);
+                MessageBox.Show("Application Number already exists.");
             }
 
             SearchForm search = new SearchForm();
