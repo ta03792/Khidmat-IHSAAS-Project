@@ -71,7 +71,6 @@
             this.TCountableAssets = new System.Windows.Forms.TextBox();
             this.LoansDue = new System.Windows.Forms.TextBox();
             this.UtilityBills = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.BCInstallmentDue = new System.Windows.Forms.TextBox();
             this.SecurityDeposit = new System.Windows.Forms.TextBox();
             this.DueRent = new System.Windows.Forms.TextBox();
@@ -81,7 +80,6 @@
             this.label47 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -226,7 +224,7 @@
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(398, 515);
+            this.UpdateButton.Location = new System.Drawing.Point(398, 595);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(67, 23);
             this.UpdateButton.TabIndex = 25;
@@ -498,7 +496,6 @@
             this.tabPage4.Controls.Add(this.TCountableAssets);
             this.tabPage4.Controls.Add(this.LoansDue);
             this.tabPage4.Controls.Add(this.UtilityBills);
-            this.tabPage4.Controls.Add(this.textBox1);
             this.tabPage4.Controls.Add(this.BCInstallmentDue);
             this.tabPage4.Controls.Add(this.SecurityDeposit);
             this.tabPage4.Controls.Add(this.DueRent);
@@ -508,7 +505,6 @@
             this.tabPage4.Controls.Add(this.label47);
             this.tabPage4.Controls.Add(this.label28);
             this.tabPage4.Controls.Add(this.label29);
-            this.tabPage4.Controls.Add(this.label30);
             this.tabPage4.Controls.Add(this.label31);
             this.tabPage4.Controls.Add(this.label32);
             this.tabPage4.Controls.Add(this.label33);
@@ -566,29 +562,22 @@
             // 
             // LoansDue
             // 
-            this.LoansDue.Location = new System.Drawing.Point(238, 151);
+            this.LoansDue.Location = new System.Drawing.Point(238, 158);
             this.LoansDue.Name = "LoansDue";
             this.LoansDue.Size = new System.Drawing.Size(140, 20);
             this.LoansDue.TabIndex = 94;
             // 
             // UtilityBills
             // 
-            this.UtilityBills.Location = new System.Drawing.Point(238, 125);
+            this.UtilityBills.Location = new System.Drawing.Point(238, 129);
             this.UtilityBills.Name = "UtilityBills";
             this.UtilityBills.Size = new System.Drawing.Size(140, 20);
             this.UtilityBills.TabIndex = 92;
             this.UtilityBills.TextChanged += new System.EventHandler(this.UtilityBills_TextChanged);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(238, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 20);
-            this.textBox1.TabIndex = 90;
-            // 
             // BCInstallmentDue
             // 
-            this.BCInstallmentDue.Location = new System.Drawing.Point(238, 70);
+            this.BCInstallmentDue.Location = new System.Drawing.Point(238, 98);
             this.BCInstallmentDue.Name = "BCInstallmentDue";
             this.BCInstallmentDue.Size = new System.Drawing.Size(140, 20);
             this.BCInstallmentDue.TabIndex = 88;
@@ -596,13 +585,15 @@
             // SecurityDeposit
             // 
             this.SecurityDeposit.Location = new System.Drawing.Point(238, 44);
+            this.SecurityDeposit.Location = new System.Drawing.Point(238, 72);
             this.SecurityDeposit.Name = "SecurityDeposit";
             this.SecurityDeposit.Size = new System.Drawing.Size(140, 20);
             this.SecurityDeposit.TabIndex = 86;
             // 
             // DueRent
             // 
-            this.DueRent.Location = new System.Drawing.Point(238, 18);
+
+            this.DueRent.Location = new System.Drawing.Point(238, 46);
             this.DueRent.Name = "DueRent";
             this.DueRent.Size = new System.Drawing.Size(140, 20);
             this.DueRent.TabIndex = 84;
@@ -646,7 +637,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(70, 154);
+            this.label28.Location = new System.Drawing.Point(70, 161);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(151, 13);
             this.label28.TabIndex = 95;
@@ -656,25 +647,16 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(70, 128);
+            this.label29.Location = new System.Drawing.Point(72, 132);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(56, 13);
             this.label29.TabIndex = 93;
             this.label29.Text = "Utility Bills:";
             // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(70, 99);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(41, 13);
-            this.label30.TabIndex = 91;
-            this.label30.Text = "Wares:";
-            // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(69, 73);
+            this.label31.Location = new System.Drawing.Point(69, 101);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(105, 13);
             this.label31.TabIndex = 89;
@@ -683,7 +665,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(69, 47);
+            this.label32.Location = new System.Drawing.Point(69, 75);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(87, 13);
             this.label32.TabIndex = 87;
@@ -692,7 +674,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(69, 21);
+            this.label33.Location = new System.Drawing.Point(69, 49);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(56, 13);
             this.label33.TabIndex = 85;
@@ -1319,7 +1301,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(551, 607);
+            this.ClientSize = new System.Drawing.Size(551, 672);
             this.Controls.Add(this.AddDocButton);
             this.Controls.Add(this.ViewDocButton);
             this.Controls.Add(this.UpdateButton);
@@ -1393,7 +1375,6 @@
         private System.Windows.Forms.TextBox TCountableAssets;
         private System.Windows.Forms.TextBox LoansDue;
         private System.Windows.Forms.TextBox UtilityBills;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox BCInstallmentDue;
         private System.Windows.Forms.TextBox SecurityDeposit;
         private System.Windows.Forms.TextBox DueRent;
@@ -1403,7 +1384,6 @@
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;

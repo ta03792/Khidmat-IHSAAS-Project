@@ -65,9 +65,9 @@ namespace Application_Form
                     q += " DA.CellNo = '" + CellNumber.Text + "' AND ";
                 }
 
-                string education = "DA.ApplicationNumber in (SELECT Application_ApplicationNumber FROM Stream_has_Application DS WHERE DS.Stream_idStream = " + 1 +") OR ";
-                string ration = "DA.ApplicationNumber in (SELECT Application_ApplicationNumber FROM Stream_has_Application DS WHERE DS.Stream_idStream = " + 2 + ") OR ";
-                string medical = "DA.ApplicationNumber in (SELECT Application_ApplicationNumber FROM Stream_has_Application DS WHERE DS.Stream_idStream = " + 3 + ") OR ";
+                string education = "DA.ApplicationNumber in (SELECT Application_ApplicationNumber FROM Stream_has_Application DS WHERE DS.Stream_idStream = " + 1 +") AND ";
+                string ration = "DA.ApplicationNumber in (SELECT Application_ApplicationNumber FROM Stream_has_Application DS WHERE DS.Stream_idStream = " + 2 + ") AND ";
+                string medical = "DA.ApplicationNumber in (SELECT Application_ApplicationNumber FROM Stream_has_Application DS WHERE DS.Stream_idStream = " + 3 + ") AND ";
 
                 if (Education.Checked == true)
                 {
@@ -86,7 +86,7 @@ namespace Application_Form
                 }
 
                 string finalstring = "";
-                for(int j = 0;j < q.Length - 4;j++)
+                for(int j = 0;j < q.Length - 5;j++)
                 {
                     finalstring += q[j];
                 }
