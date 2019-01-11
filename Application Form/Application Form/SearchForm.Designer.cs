@@ -301,7 +301,9 @@
             this.Results.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Results.MultiSelect = false;
             this.Results.Name = "Results";
+            this.Results.ReadOnly = true;
             this.Results.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.Results.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Results.Size = new System.Drawing.Size(896, 409);
             this.Results.TabIndex = 0;
             this.Results.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Results_CellContentClick);
