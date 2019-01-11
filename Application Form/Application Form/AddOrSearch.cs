@@ -34,5 +34,13 @@ namespace Application_Form
             SearchForm search = new SearchForm();
             search.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DocumentsForm formDoc = new DocumentsForm();
+            formDoc.Show();
+            
+            //open Document Form to add docs
+        }
     }
 }

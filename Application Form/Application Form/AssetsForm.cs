@@ -24,6 +24,7 @@ namespace Application_Form
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
             {
                 string q = "SELECT ApplicationNumber, FirstName, LastName, CNIC, CellNo FROM dbo.Application DA INNER JOIn dbo.ApplicantAssets DAS ON DA.ApplicationNumber = DAS.Application_ApplicationNumber WHERE";
 
@@ -87,6 +88,11 @@ namespace Application_Form
                     string s = dt.Rows[k][0].ToString() + dt.Rows[k][1].ToString();
                     Results.DataSource = dt;
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: '{0}'", ex);
+                MessageBox.Show("Put in some criteria for searching.");
             }
         }
 

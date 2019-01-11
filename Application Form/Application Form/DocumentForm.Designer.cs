@@ -35,6 +35,8 @@
             this.filePathLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.otherLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // SaveButton
@@ -49,7 +51,7 @@
             // 
             // OpenButton
             // 
-            this.OpenButton.Location = new System.Drawing.Point(567, 153);
+            this.OpenButton.Location = new System.Drawing.Point(612, 177);
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.Size = new System.Drawing.Size(104, 31);
             this.OpenButton.TabIndex = 1;
@@ -59,7 +61,7 @@
             // 
             // AppNoTextBox
             // 
-            this.AppNoTextBox.Location = new System.Drawing.Point(309, 99);
+            this.AppNoTextBox.Location = new System.Drawing.Point(354, 131);
             this.AppNoTextBox.Name = "AppNoTextBox";
             this.AppNoTextBox.Size = new System.Drawing.Size(362, 26);
             this.AppNoTextBox.TabIndex = 2;
@@ -67,7 +69,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(96, 105);
+            this.label1.Location = new System.Drawing.Point(158, 137);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 20);
             this.label1.TabIndex = 3;
@@ -76,7 +78,7 @@
             // filePathLabel
             // 
             this.filePathLabel.AutoSize = true;
-            this.filePathLabel.Location = new System.Drawing.Point(96, 222);
+            this.filePathLabel.Location = new System.Drawing.Point(8, 241);
             this.filePathLabel.Name = "filePathLabel";
             this.filePathLabel.Size = new System.Drawing.Size(62, 20);
             this.filePathLabel.TabIndex = 4;
@@ -87,7 +89,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Emoji", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(202, 27);
+            this.label2.Location = new System.Drawing.Point(233, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(396, 37);
             this.label2.TabIndex = 5;
@@ -96,12 +98,22 @@
             // otherLabel
             // 
             this.otherLabel.AutoSize = true;
-            this.otherLabel.Location = new System.Drawing.Point(96, 185);
+            this.otherLabel.Location = new System.Drawing.Point(37, 199);
             this.otherLabel.Name = "otherLabel";
             this.otherLabel.Size = new System.Drawing.Size(96, 20);
             this.otherLabel.TabIndex = 6;
             this.otherLabel.Text = "File to Save:";
             this.otherLabel.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Application_Form.Properties.Resources.Ihsaas_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 102);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // DocumentsForm
             // 
@@ -109,6 +121,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(784, 371);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.otherLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.filePathLabel);
@@ -119,6 +132,7 @@
             this.Name = "DocumentsForm";
             this.Text = "Add Documents";
             this.Load += new System.EventHandler(this.DocumentsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +147,6 @@
         private System.Windows.Forms.Label filePathLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label otherLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -16,7 +16,12 @@ namespace Application_Form
         {
             InitializeComponent();
         }
-
+        public DocumentsForm(string AppNos)
+        {
+            InitializeComponent();
+            AppNoTextBox.Text = AppNos;
+            AppNoTextBox.ReadOnly = true;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();

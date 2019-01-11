@@ -133,7 +133,7 @@
             this.FirstName = new System.Windows.Forms.TextBox();
             this.FatherName = new System.Windows.Forms.TextBox();
             this.Address = new System.Windows.Forms.TextBox();
-            this.CNIC = new System.Windows.Forms.TextBox();
+            this.CNIC_1 = new System.Windows.Forms.TextBox();
             this.CellNumber = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -149,6 +149,7 @@
             this.Monthly = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.CNIC = new System.Windows.Forms.MaskedTextBox();
             this.Stream.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -161,7 +162,7 @@
             // 
             // Exit
             // 
-            this.Exit.Location = new System.Drawing.Point(710, 837);
+            this.Exit.Location = new System.Drawing.Point(490, 882);
             this.Exit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(76, 35);
@@ -172,7 +173,7 @@
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(600, 837);
+            this.AddButton.Location = new System.Drawing.Point(386, 882);
             this.AddButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(92, 35);
@@ -231,7 +232,7 @@
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(597, 915);
+            this.UpdateButton.Location = new System.Drawing.Point(361, 882);
             this.UpdateButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(100, 35);
@@ -243,7 +244,7 @@
             // 
             // AddDocButton
             // 
-            this.AddDocButton.Location = new System.Drawing.Point(32, 882);
+            this.AddDocButton.Location = new System.Drawing.Point(13, 882);
             this.AddDocButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AddDocButton.Name = "AddDocButton";
             this.AddDocButton.Size = new System.Drawing.Size(194, 35);
@@ -254,9 +255,9 @@
             // 
             // ViewDocButton
             // 
-            this.ViewDocButton.Location = new System.Drawing.Point(32, 882);
+            this.ViewDocButton.Location = new System.Drawing.Point(12, 882);
             this.ViewDocButton.Name = "ViewDocButton";
-            this.ViewDocButton.Size = new System.Drawing.Size(194, 35);
+            this.ViewDocButton.Size = new System.Drawing.Size(232, 35);
             this.ViewDocButton.TabIndex = 1;
             this.ViewDocButton.Text = "View Document";
             this.ViewDocButton.UseVisualStyleBackColor = true;
@@ -1148,6 +1149,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.CNIC);
             this.tabPage1.Controls.Add(this.label42);
             this.tabPage1.Controls.Add(this.Sect);
             this.tabPage1.Controls.Add(this.Religion);
@@ -1156,7 +1158,7 @@
             this.tabPage1.Controls.Add(this.FirstName);
             this.tabPage1.Controls.Add(this.FatherName);
             this.tabPage1.Controls.Add(this.Address);
-            this.tabPage1.Controls.Add(this.CNIC);
+            this.tabPage1.Controls.Add(this.CNIC_1);
             this.tabPage1.Controls.Add(this.CellNumber);
             this.tabPage1.Controls.Add(this.label41);
             this.tabPage1.Controls.Add(this.label34);
@@ -1246,13 +1248,15 @@
             this.Address.Size = new System.Drawing.Size(344, 26);
             this.Address.TabIndex = 7;
             // 
-            // CNIC
+            // CNIC_1
             // 
-            this.CNIC.Location = new System.Drawing.Point(213, 229);
-            this.CNIC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.CNIC.Name = "CNIC";
-            this.CNIC.Size = new System.Drawing.Size(344, 26);
-            this.CNIC.TabIndex = 3;
+            this.CNIC_1.CausesValidation = false;
+            this.CNIC_1.Location = new System.Drawing.Point(213, 229);
+            this.CNIC_1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CNIC_1.Name = "CNIC_1";
+            this.CNIC_1.Size = new System.Drawing.Size(344, 26);
+            this.CNIC_1.TabIndex = 3;
+            this.CNIC_1.TextChanged += new System.EventHandler(this.CNIC_TextChanged);
             // 
             // CellNumber
             // 
@@ -1415,12 +1419,20 @@
             this.tabControl1.Size = new System.Drawing.Size(698, 754);
             this.tabControl1.TabIndex = 0;
             // 
+            // CNIC
+            // 
+            this.CNIC.Location = new System.Drawing.Point(213, 228);
+            this.CNIC.Mask = "00000-0000000-0";
+            this.CNIC.Name = "CNIC";
+            this.CNIC.Size = new System.Drawing.Size(344, 26);
+            this.CNIC.TabIndex = 49;
+            // 
             // ApplicationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(826, 1034);
+            this.ClientSize = new System.Drawing.Size(695, 925);
             this.Controls.Add(this.AddDocButton);
             this.Controls.Add(this.ViewDocButton);
             this.Controls.Add(this.UpdateButton);
@@ -1557,7 +1569,7 @@
         private System.Windows.Forms.TextBox FirstName;
         private System.Windows.Forms.TextBox FatherName;
         private System.Windows.Forms.TextBox Address;
-        private System.Windows.Forms.TextBox CNIC;
+        private System.Windows.Forms.TextBox CNIC_1;
         private System.Windows.Forms.TextBox CellNumber;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label34;
@@ -1573,6 +1585,7 @@
         private System.Windows.Forms.RadioButton Monthly;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.MaskedTextBox CNIC;
     }
 }
 
